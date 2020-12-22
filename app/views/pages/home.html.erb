@@ -3,8 +3,10 @@
     <p>GE - girar 90 graus à esquerda</p>
     <p>GD - girar 90 graus à direta</p>
     <p>M - movimentar. Para cada comando M a sonda se move uma posição na direção à qual sua face está apontada.</p>
+    <p>Explicação:</p>
+    <p>Seguir o padrão que está escrito dentro do quadrado do input.</p>
     <%= simple_form_for (Coordinate.new) do |f| %>
-        <%= f.input :movimentos, as: :text %>
+        <%= f.input :movimentos, placeholder: "Seguir o seguinte exemplo: ['GD', 'M', 'M']" %>
         <%= f.button :submit , class: "btn btn-primary"%>
     <% end %>
 

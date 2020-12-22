@@ -7,6 +7,7 @@ class CoordinatesController < ApplicationController
     def create
         @coordinate = Coordinate.new(coordinate_params)
         @coordinate.user = current_user
+        achar_coordenada(@coordinate.movimentos)
         if @coordinate.save
             coordinate_path(@coordinate)
         else
@@ -15,6 +16,10 @@ class CoordinatesController < ApplicationController
     end
 
     private
+
+    def achar_coordenada
+        raise
+    end
 
     def set_coordinate
         @coordinate = Coordinate.find(params[:id])
