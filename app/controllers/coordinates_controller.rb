@@ -8,7 +8,7 @@ class CoordinatesController < ApplicationController
         @coordinate = Coordinate.new(coordinate_params)
         @coordinate.user = current_user
         if @coordinate.save
-            render :show, status: :created
+            coordinate_path(@coordinate)
         else
             render_error
         end
