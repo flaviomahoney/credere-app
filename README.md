@@ -40,9 +40,9 @@ Explicação: Dessa forma a sonda viraria à esquerda e daria 3 passos, chegando
 
 Portanto a resposta seria.
 
-*X: 0
-*Y: 3
-*Face: C
+* X: 0
+* Y: 3
+* Face: C
 
 Explicação: A face por ter virado 90º à esquerda virou o bico para cima e andou três casas, portanto seria um input válido com uma resposta válida.
 
@@ -52,7 +52,7 @@ Explicação: A face por ter virado 90º à esquerda virou o bico para cima e an
 1. Input1: XXXXXXXXXXX
 2. Input2: M,M,M,M,M,M,M,M
 3. Input3: GD,M
-
+---------------
 1. O Input 1 nós temos um input que não compões o programa, portanto sempre virá zerado.
 2. O Input 2 não aceitará a criação pois a sonda estará andando 8 vezes para a direita, estourando o tamanho da matriz proposta.
 3. O Input 3 não seria aceito pois viramos a direita logo em seguidas andamos para fora do quadrante.
