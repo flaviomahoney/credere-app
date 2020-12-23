@@ -18,6 +18,7 @@ Obs: a posição atual seria 0,0 e a seta significa a direção.
 * D - Direita
 * C - Cima
 * B - Baixo
+-------------------------
   
 * GE - girar 90 graus à esquerda
 * GD - girar 90 graus à direta
