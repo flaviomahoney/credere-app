@@ -5,4 +5,8 @@
     <p>x: <%= @coordinate.x  %>,</p>
     <p>y: <%= @coordinate.y  %>,</p>
     <p>face: <%= @coordinate.face%></p>
+
+    <% if @coordinate.x == 0 && @coordinate.y == 0 %>
+        <p>Não é um input aceitável, por favor voltar e tentar novamente.</p>
+    <% end %>
 </div>

@@ -10,7 +10,7 @@ class CoordinatesController < ApplicationController
         find_coordinate()
         if @coordinate.x >= 0 && @coordinate.y >= 0 && @coordinate.x < 5 && @coordinate.y < 5
             @coordinate.save
-            coordinate_path(@coordinate)
+            render :show
         else
             render_error
         end
