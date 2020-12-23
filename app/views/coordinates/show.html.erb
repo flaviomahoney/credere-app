@@ -9,4 +9,6 @@
     <% if @coordinate.x == 0 && @coordinate.y == 0 %>
         <p>Não é um input aceitável, por favor voltar e tentar novamente.</p>
     <% end %>
+
+    <%= link_to "Try Again", root_path, class: "btn btn-primary" %>
 </div>
