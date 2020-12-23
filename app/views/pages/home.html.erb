@@ -6,17 +6,9 @@
     <p>Explicação:</p>
     <p>Seguir o padrão que está escrito dentro do quadrado do input.</p>
     <%= simple_form_for (Coordinate.new) do |f| %>
-        <%= f.input :movimentos, placeholder: "Seguir o seguinte exemplo: ['GD', 'M', 'M']" %>
+        <%= f.input :movimentos, placeholder: "Seguir o seguinte exemplo: GD, M, M" %>
         <%= f.button :submit , class: "btn btn-primary"%>
     <% end %>
 
     <br>
-
-    <p>Start:</p>
-    <p>(0,4)	(1,4)	(2,4)	(3,4)	(4,4)</p>
-    <p>(0,3)	(1,3)	(2,3)	(3,3)	(4,3)</p>
-    <p>(0,2)	(1,2)	(2,2)	(3,2)	(4,2)</p>
-    <p>(0,1)	(1,1)	(2,1)	(3,1)	(4,1)</p>
-    <p>  * >	(1,0)	(2,0)	(3,0)	(4,0)</p>
-    <p>* Indica a direção inicial da nossa sonda</p>
 </div>

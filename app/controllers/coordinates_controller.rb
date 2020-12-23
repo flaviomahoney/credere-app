@@ -7,8 +7,9 @@ class CoordinatesController < ApplicationController
     def create
         @coordinate = Coordinate.new(coordinate_params)
         @coordinate.user = current_user
-        achar_coordenada(@coordinate.movimentos)
-        if @coordinate.save
+        find_coordinate()
+        if @coordinate.x >= 0 && @coordinate.y >= 0 && @coordinate.x < 5 && @coordinate.y < 5
+            @coordinate.save
             coordinate_path(@coordinate)
         else
             render_error
@@ -17,8 +18,50 @@ class CoordinatesController < ApplicationController
 
     private
 
-    def achar_coordenada
-        raise
+    def find_coordinate
+        coord = @coordinate.movimentos
+        face = "D"
+        x = 0
+        y = 0
+        coord = coord.split(",")
+        coord.each do |s|
+            s = s.strip
+
+            if s == "GD" && face == "D" 
+                face = "B"
+            elsif s == "GD" && face == "B" 
+                face = "E"
+            elsif s == "GD" && face == "E" 
+                face = "C"
+            elsif s == "GD" && face == "C" 
+                face = "D"
+            end
+            
+            if s == "GE" && face == "D" 
+                face = "C"
+            elsif s == "GE" && face == "B" 
+                face = "D"
+            elsif s == "GE" && face == "E" 
+                face = "B"
+            elsif s == "GE" && face == "C" 
+                face = "E"
+            end
+
+            if face == "E" && s == "M"
+                x = x - 1
+            elsif face == "D" && s == "M"
+                x += 1
+            elsif face == "C" && s == "M"
+                y += 1
+            elsif face == "B" && s == "M"
+                y = y - 1
+            end
+
+        end
+
+        @coordinate.face = face
+        @coordinate.x = x
+        @coordinate.y = y
     end
 
     def set_coordinate
